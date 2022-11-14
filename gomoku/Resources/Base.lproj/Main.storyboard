@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b5K-eN-xXI">
     <device id="retina6_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -8,15 +8,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="gomoku" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="main" id="BYZ-38-t0r" userLabel="Main Controller" customClass="MainController" customModule="gomoku" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPt-fR-HYu">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPt-fR-HYu" userLabel="Container">
                                 <rect key="frame" x="15" y="47" width="360" height="763"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzk-Wo-J0e">
@@ -29,12 +29,15 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                                             <color key="baseBackgroundColor" red="0.93725490199999995" green="0.75294117650000003" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="N4P-5z-60q" kind="show" identifier="startSegue" id="72a-ZT-hLf"/>
+                                        </connections>
                                     </button>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WTg-Mc-KdZ">
                                         <rect key="frame" x="277" y="647" width="83" height="32"/>
                                         <segments>
-                                            <segment title="흑돌"/>
-                                            <segment title="백돌"/>
+                                            <segment title="선공"/>
+                                            <segment title="후공"/>
                                         </segments>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="플레이어 순서" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6a-wl-IHP">
@@ -67,7 +70,6 @@
                                     <constraint firstItem="d6a-wl-IHP" firstAttribute="centerY" secondItem="WTg-Mc-KdZ" secondAttribute="centerY" id="Xfu-aa-id4"/>
                                     <constraint firstItem="d6a-wl-IHP" firstAttribute="leading" secondItem="vPt-fR-HYu" secondAttribute="leading" id="bam-RZ-s8D"/>
                                     <constraint firstItem="DP2-ni-9y1" firstAttribute="leading" secondItem="vPt-fR-HYu" secondAttribute="leading" id="bxJ-8J-auA"/>
-                                    <constraint firstItem="bzk-Wo-J0e" firstAttribute="centerX" secondItem="vPt-fR-HYu" secondAttribute="centerX" id="c21-22-ebh"/>
                                     <constraint firstAttribute="trailing" secondItem="WTg-Mc-KdZ" secondAttribute="trailing" id="cDU-Zi-fWa"/>
                                     <constraint firstAttribute="trailing" secondItem="jWH-hI-f4q" secondAttribute="trailing" id="hKb-zs-BCh"/>
                                     <constraint firstItem="DP2-ni-9y1" firstAttribute="top" secondItem="jWH-hI-f4q" secondAttribute="bottom" constant="10" id="ptB-fP-3Sx"/>
@@ -85,26 +87,107 @@
                             <constraint firstItem="vPt-fR-HYu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xc2-yS-jqa"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="3fp-I4-BPi"/>
+                    <connections>
+                        <outlet property="segmentControl" destination="WTg-Mc-KdZ" id="uWK-JK-xpP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21.538461538461537" y="3.5545023696682461"/>
+            <point key="canvasLocation" x="1880" y="3.5545023696682461"/>
         </scene>
-        <!--View Controller-->
+        <!--InGame Controller-->
         <scene sceneID="wWc-IQ-oCK">
             <objects>
-                <viewController id="N4P-5z-60q" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ingame" modalPresentationStyle="fullScreen" id="N4P-5z-60q" userLabel="InGame Controller" customClass="InGameController" customModule="gomoku" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5yf-cf-JEt">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0br-sm-meP">
+                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1Z-Fp-D5S">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="32"/>
+                                        <color key="tintColor" red="0.93725490199999995" green="0.75294117650000003" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="종료">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="onExit:" destination="N4P-5z-60q" eventType="touchUpInside" id="hKm-BT-w7w"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hCw-cX-qCF" userLabel="Board Image">
+                                        <rect key="frame" x="0.0" y="52" width="390" height="500"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="500" id="x7R-Ub-ZKs"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="grS-Ac-ptB" userLabel="Stones Image">
+                                        <rect key="frame" x="0.0" y="52" width="390" height="500"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="500" id="toh-hr-BgI"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="jJi-tc-nz2" appends="YES" id="0ZP-hI-vuv"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="grS-Ac-ptB" secondAttribute="trailing" id="7xI-xd-VK7"/>
+                                    <constraint firstItem="w1Z-Fp-D5S" firstAttribute="top" secondItem="0br-sm-meP" secondAttribute="top" id="QTG-lc-KEc"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="w1Z-Fp-D5S" secondAttribute="trailing" constant="10" id="Th1-DB-Wi3"/>
+                                    <constraint firstItem="grS-Ac-ptB" firstAttribute="leading" secondItem="0br-sm-meP" secondAttribute="leading" id="YXL-j2-ezx"/>
+                                    <constraint firstItem="w1Z-Fp-D5S" firstAttribute="leading" secondItem="0br-sm-meP" secondAttribute="leading" id="aS3-D9-eG0"/>
+                                    <constraint firstAttribute="trailing" secondItem="hCw-cX-qCF" secondAttribute="trailing" id="rkS-E0-ZDe"/>
+                                    <constraint firstItem="grS-Ac-ptB" firstAttribute="top" secondItem="w1Z-Fp-D5S" secondAttribute="bottom" constant="20" id="srD-Nk-JeD"/>
+                                    <constraint firstItem="hCw-cX-qCF" firstAttribute="leading" secondItem="0br-sm-meP" secondAttribute="leading" id="tZb-Xj-Nf0"/>
+                                    <constraint firstItem="hCw-cX-qCF" firstAttribute="top" secondItem="w1Z-Fp-D5S" secondAttribute="bottom" constant="20" id="ubL-5h-XJg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="U8x-eu-iil"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="U8x-eu-iil" firstAttribute="trailing" secondItem="0br-sm-meP" secondAttribute="trailing" id="6Iu-bA-9GR"/>
+                            <constraint firstItem="U8x-eu-iil" firstAttribute="bottom" secondItem="0br-sm-meP" secondAttribute="bottom" id="WlL-rE-var"/>
+                            <constraint firstItem="0br-sm-meP" firstAttribute="top" secondItem="U8x-eu-iil" secondAttribute="top" id="n04-ix-aEm"/>
+                            <constraint firstItem="0br-sm-meP" firstAttribute="leading" secondItem="U8x-eu-iil" secondAttribute="leading" id="zBd-M0-9pw"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Jht-6m-pfQ"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Jht-6m-pfQ"/>
+                    <connections>
+                        <outlet property="boardImage" destination="hCw-cX-qCF" id="qUr-gj-GcY"/>
+                        <outlet property="stonesImage" destination="grS-Ac-ptB" id="rnA-rG-1iu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nU1-he-FsL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="jJi-tc-nz2">
+                    <connections>
+                        <action selector="didTab:" destination="N4P-5z-60q" id="d9j-ct-rYQ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="737" y="4"/>
+            <point key="canvasLocation" x="2595" y="4"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="20Z-8m-Yr0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="b5K-eN-xXI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yYx-d4-sdq">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nHi-iI-ghO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9CJ-As-fQJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1106" y="4"/>
         </scene>
     </scenes>
     <resources>
