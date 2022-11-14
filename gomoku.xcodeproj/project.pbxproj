@@ -12,7 +12,6 @@
 		8492701A29226F520066202B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492701929226F520066202B /* ViewController.swift */; };
 		8492701D29226F520066202B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8492701B29226F520066202B /* Main.storyboard */; };
 		8492701F29226F540066202B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8492701E29226F540066202B /* Assets.xcassets */; };
-		8492702229226F540066202B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8492702029226F540066202B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +21,6 @@
 		8492701929226F520066202B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8492701C29226F520066202B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8492701E29226F540066202B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8492702129226F540066202B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8492702329226F540066202B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,15 +54,46 @@
 		8492701429226F520066202B /* gomoku */ = {
 			isa = PBXGroup;
 			children = (
-				8492701529226F520066202B /* AppDelegate.swift */,
-				8492701729226F520066202B /* SceneDelegate.swift */,
-				8492701929226F520066202B /* ViewController.swift */,
-				8492701B29226F520066202B /* Main.storyboard */,
-				8492701E29226F540066202B /* Assets.xcassets */,
-				8492702029226F540066202B /* LaunchScreen.storyboard */,
-				8492702329226F540066202B /* Info.plist */,
+				84927029292270160066202B /* Supporting Files */,
+				8492702A292270280066202B /* Resources */,
+				8492702B2922703D0066202B /* Views */,
+				8492702C2922706E0066202B /* Utilities */,
 			);
 			path = gomoku;
+			sourceTree = "<group>";
+		};
+		84927029292270160066202B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8492701529226F520066202B /* AppDelegate.swift */,
+				8492701729226F520066202B /* SceneDelegate.swift */,
+				8492702329226F540066202B /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8492702A292270280066202B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8492701B29226F520066202B /* Main.storyboard */,
+				8492701E29226F540066202B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8492702B2922703D0066202B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8492701929226F520066202B /* ViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8492702C2922706E0066202B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +154,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8492702229226F540066202B /* LaunchScreen.storyboard in Resources */,
 				8492701F29226F540066202B /* Assets.xcassets in Resources */,
 				8492701D29226F520066202B /* Main.storyboard in Resources */,
 			);
@@ -153,14 +181,6 @@
 				8492701C29226F520066202B /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8492702029226F540066202B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8492702129226F540066202B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -289,12 +309,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J2V5PFX4TX;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = gomoku/Info.plist;
+				INFOPLIST_FILE = "gomoku/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,9 +323,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.junyoung.gomoku;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,12 +341,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J2V5PFX4TX;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = gomoku/Info.plist;
+				INFOPLIST_FILE = "gomoku/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +355,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.junyoung.gomoku;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
