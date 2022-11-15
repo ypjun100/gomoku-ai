@@ -69,8 +69,8 @@ class Minimax {
     
     // 특정 색상의 돌을 놓았을 때 바로 끝낼 수 있는 위치가 있는지 확인합니다.
     // stoneColor: 현재 상태의 돌 색상입니다.(1: 흑, 2: 백)
-    static func searchWinningMove(board: Board, forStone: Int, isMax: Bool) -> [Int]? {
-        let tmpBoard = Board(board: board.getBoardArray())
+    static func searchWinningMove(board: [[Int]], forStone: Int, isMax: Bool) -> [Int]? {
+        let tmpBoard = Board(board: board)
         let possibleMoves = tmpBoard.generateMoves()
         
         for move in possibleMoves {

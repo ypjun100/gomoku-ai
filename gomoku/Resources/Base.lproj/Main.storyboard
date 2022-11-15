@@ -119,32 +119,43 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hCw-cX-qCF" userLabel="Board Image">
-                                        <rect key="frame" x="0.0" y="52" width="390" height="500"/>
+                                        <rect key="frame" x="0.0" y="42" width="390" height="400"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="500" id="x7R-Ub-ZKs"/>
+                                            <constraint firstAttribute="height" constant="400" id="x7R-Ub-ZKs"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="grS-Ac-ptB" userLabel="Stones Image">
-                                        <rect key="frame" x="0.0" y="52" width="390" height="500"/>
+                                        <rect key="frame" x="0.0" y="42" width="390" height="400"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="500" id="toh-hr-BgI"/>
+                                            <constraint firstAttribute="height" constant="400" id="toh-hr-BgI"/>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="jJi-tc-nz2" appends="YES" id="0ZP-hI-vuv"/>
                                         </connections>
                                     </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="게임이 시작되었습니다." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJN-po-Ctr">
+                                        <rect key="frame" x="10" y="452" width="370" height="301"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="LJN-po-Ctr" secondAttribute="trailing" constant="10" id="0uN-mz-r7H"/>
+                                    <constraint firstAttribute="bottom" secondItem="LJN-po-Ctr" secondAttribute="bottom" constant="10" id="3e2-za-1cn"/>
                                     <constraint firstAttribute="trailing" secondItem="grS-Ac-ptB" secondAttribute="trailing" id="7xI-xd-VK7"/>
                                     <constraint firstItem="w1Z-Fp-D5S" firstAttribute="top" secondItem="0br-sm-meP" secondAttribute="top" id="QTG-lc-KEc"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="w1Z-Fp-D5S" secondAttribute="trailing" constant="10" id="Th1-DB-Wi3"/>
                                     <constraint firstItem="grS-Ac-ptB" firstAttribute="leading" secondItem="0br-sm-meP" secondAttribute="leading" id="YXL-j2-ezx"/>
                                     <constraint firstItem="w1Z-Fp-D5S" firstAttribute="leading" secondItem="0br-sm-meP" secondAttribute="leading" id="aS3-D9-eG0"/>
+                                    <constraint firstItem="LJN-po-Ctr" firstAttribute="leading" secondItem="0br-sm-meP" secondAttribute="leading" constant="10" id="f3y-6q-Vtl"/>
+                                    <constraint firstItem="LJN-po-Ctr" firstAttribute="top" secondItem="hCw-cX-qCF" secondAttribute="bottom" constant="10" id="ghn-bi-lJW"/>
                                     <constraint firstAttribute="trailing" secondItem="hCw-cX-qCF" secondAttribute="trailing" id="rkS-E0-ZDe"/>
-                                    <constraint firstItem="grS-Ac-ptB" firstAttribute="top" secondItem="w1Z-Fp-D5S" secondAttribute="bottom" constant="20" id="srD-Nk-JeD"/>
+                                    <constraint firstItem="grS-Ac-ptB" firstAttribute="top" secondItem="w1Z-Fp-D5S" secondAttribute="bottom" constant="10" id="srD-Nk-JeD"/>
                                     <constraint firstItem="hCw-cX-qCF" firstAttribute="leading" secondItem="0br-sm-meP" secondAttribute="leading" id="tZb-Xj-Nf0"/>
-                                    <constraint firstItem="hCw-cX-qCF" firstAttribute="top" secondItem="w1Z-Fp-D5S" secondAttribute="bottom" constant="20" id="ubL-5h-XJg"/>
+                                    <constraint firstItem="hCw-cX-qCF" firstAttribute="top" secondItem="w1Z-Fp-D5S" secondAttribute="bottom" constant="10" id="ubL-5h-XJg"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -160,6 +171,7 @@
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Jht-6m-pfQ"/>
                     <connections>
                         <outlet property="boardImage" destination="hCw-cX-qCF" id="qUr-gj-GcY"/>
+                        <outlet property="logTextView" destination="LJN-po-Ctr" id="Xqi-sl-3Cp"/>
                         <outlet property="stonesImage" destination="grS-Ac-ptB" id="rnA-rG-1iu"/>
                     </connections>
                 </viewController>
@@ -191,6 +203,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

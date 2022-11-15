@@ -2,7 +2,7 @@ import Foundation
 
 // 게임 보드 클래스
 class Board {
-    private var board: [[Int]] // 실제 게임 보드 데이터
+    var board: [[Int]] // 실제 게임 보드 데이터
     
     // 기존의 배열을 기반으로 새로운 게임 보드를 생성합니다.
     init(board: [[Int]]) {
@@ -19,6 +19,9 @@ class Board {
     
     // 현재 게임 보드의 데이터를 반환합니다.
     func getBoardArray() -> [[Int]] { return self.board }
+    
+    // 현재 게임 보드를 반환합니다.
+    func getBoard() -> Board { return self }
     
     // 현재 게임 보드의 상태를 표시합니다.
     func show() {
