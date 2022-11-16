@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  gomoku
-//
-//  Created by 윤준영 on 2022/11/14.
-//
-
 import UIKit
 
 class MainController: UIViewController {
@@ -20,7 +13,7 @@ class MainController: UIViewController {
         guard let inGameView = segue.destination as? InGameController else {
             return
         }
-        inGameView.isAIFirst = segmentControl.selectedSegmentIndex == 0 ? false : true
+        inGameView.isAIFirst = segmentControl.selectedSegmentIndex == 0 ? false : true // AI의 선공/후공 여부를 InGameController로 보냄
     }
 }
 

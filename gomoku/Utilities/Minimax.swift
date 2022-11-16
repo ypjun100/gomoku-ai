@@ -3,7 +3,7 @@ import Foundation
 // 미니맥스 알고리즘
 class Minimax {
     static let winScore = 100000000 // 승리 점수. 게임에서 이기기 위해선 winScore 이상의 점수를 받아야합니다.
-    public static var isAIFirst = false
+    public static var isAIFirst = false // AI가 선공인지 확인합니다.
     
     static func getWinScore() -> Int { return winScore }
     
@@ -95,19 +95,14 @@ class Minimax {
     // 반대로, depth가 2이고, AI가 흑돌을 취한다고 했을 때 '흑(Max) -> 백(Min)'의 순서를 가지며,
     // '흑돌 / 백돌'로 위와 동일하게 상대적인 최종점수를 계산합니다.
     static func getScore(board: [[Int]], isMax: Bool) -> Double {
+        var blackScore = getStoneScore(board: board, forStone: 1, isMax: isMax)
+        var whiteScore = getStoneScore(board: board, forStone: 2, isMax: isMax)
+        
         if(isAIFirst) { // AI가 먼저 돌을 두는 경우
-            let blackScore = getStoneScore(board: board, forStone: 1, isMax: !isMax) // 주석 추가
-            var whiteScore = getStoneScore(board: board, forStone: 2, isMax: !isMax) // 주석 추가
-            
-            if(whiteScore == 0) { whiteScore = 1 } // 주석 추가
-            
+            if(whiteScore == 0) { whiteScore = 1 } // 분모가 0이 되는 것을 방지합니다.
             return Double(blackScore) / Double(whiteScore)
         } else { // 플레이어가 먼저 돌을 두는 경우
-            var blackScore = getStoneScore(board: board, forStone: 1, isMax: isMax) // 주석 추가
-            let whiteScore = getStoneScore(board: board, forStone: 2, isMax: isMax) // 주석 추가
-            
-            if(blackScore == 0) { blackScore = 1 } // 주석 추가
-            
+            if(blackScore == 0) { blackScore = 1 } // 분모가 0이 되는 것을 방지합니다.
             return Double(whiteScore) / Double(blackScore)
         }
     }

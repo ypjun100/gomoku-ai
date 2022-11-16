@@ -16,6 +16,7 @@
 		8492703029228D6D0066202B /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492702F29228D6D0066202B /* Board.swift */; };
 		8492703229228D760066202B /* Minimax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492703129228D760066202B /* Minimax.swift */; };
 		8492703429228E630066202B /* GomokuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8492703329228E630066202B /* GomokuManager.swift */; };
+		849270372924C80A0066202B /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849270362924C80A0066202B /* UITextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8492702F29228D6D0066202B /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		8492703129228D760066202B /* Minimax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Minimax.swift; sourceTree = "<group>"; };
 		8492703329228E630066202B /* GomokuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GomokuManager.swift; sourceTree = "<group>"; };
+		849270362924C80A0066202B /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		8492701429226F520066202B /* gomoku */ = {
 			isa = PBXGroup;
 			children = (
+				849270352924C7DF0066202B /* Extensions */,
 				84927029292270160066202B /* Supporting Files */,
 				8492702A292270280066202B /* Resources */,
 				8492702B2922703D0066202B /* Views */,
@@ -106,6 +109,14 @@
 				8492703329228E630066202B /* GomokuManager.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		849270352924C7DF0066202B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				849270362924C80A0066202B /* UITextView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +191,7 @@
 			files = (
 				8492703429228E630066202B /* GomokuManager.swift in Sources */,
 				8492701A29226F520066202B /* MainController.swift in Sources */,
+				849270372924C80A0066202B /* UITextView.swift in Sources */,
 				8492701629226F520066202B /* AppDelegate.swift in Sources */,
 				8492703029228D6D0066202B /* Board.swift in Sources */,
 				8492702E29227F240066202B /* InGameController.swift in Sources */,

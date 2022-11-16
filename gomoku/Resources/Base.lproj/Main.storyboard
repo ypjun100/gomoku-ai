@@ -173,6 +173,7 @@
                         <outlet property="boardImage" destination="hCw-cX-qCF" id="qUr-gj-GcY"/>
                         <outlet property="logTextView" destination="LJN-po-Ctr" id="Xqi-sl-3Cp"/>
                         <outlet property="stonesImage" destination="grS-Ac-ptB" id="rnA-rG-1iu"/>
+                        <outlet property="tapGestureRecognizer" destination="jJi-tc-nz2" id="Xjz-W6-j7p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nU1-he-FsL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -199,7 +200,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9CJ-As-fQJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1106" y="4"/>
+            <point key="canvasLocation" x="1166" y="4"/>
         </scene>
     </scenes>
     <resources>
